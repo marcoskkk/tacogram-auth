@@ -2,7 +2,10 @@
   <% for post in @posts %>
     <div class="col-3">
       <h4>
-        <!-- TODO: display the name of the user that created the post -->
+      <% if post.user%>
+        <%= post.user.first_name%>
+      <% else %>
+      <% end %>
       </h4>
       <img class="img-fluid" src="<%= post.image %>" class="w-full">
       <p><%= post.body %></p>
